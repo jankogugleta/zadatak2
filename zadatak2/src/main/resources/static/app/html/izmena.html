@@ -1,0 +1,49 @@
+<div ng-controller="IzmenaCtrl">
+	<h1>{{dokument.naziv}} </h1>
+<div class="row">
+<form>
+	<div class="form-group"">
+	<label>Kolicina</label>
+	<input class="form-control" ng-model="novaStavka.kolicina">
+	</div>
+	<div class="form-group">
+	<label>Cena</label>
+	<input class="form-control" ng-model="novaStavka.cena">
+	</div>
+	<div class="form-group">
+	<label>Roba</label>
+	<select class="form-control"  ng-model="novaStavka.robaId">
+		<option ng-repeat="x in roba" value= "{{x.id}}"> {{x.naziv}}</option>
+	</select>
+	</div>
+		   
+	<button class="btn btn-primary" ng-click="dodaj()">Dodaj Stavku</button>
+</form>
+
+<div class="col">
+<table class="table">
+	<thead>Stavke Dokumenta</thead>
+	<thead>
+		<tr>
+		<th>Roba</th>
+		<th>Kolicina</th>
+		<th>Cena</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="x in dokument.stavkeDokumenta">
+		<td>{{x.nazivRobe}}</td>
+		<td>{{x.kolicina}}</td>
+		<td>{{x.cena}}</td>
+		
+		
+		<td>
+		<button ng-click="potvrdiBrisanje(x.id)">Obrisi</button>
+		</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+
+</div>
+</div>

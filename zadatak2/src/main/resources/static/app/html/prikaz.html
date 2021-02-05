@@ -1,0 +1,30 @@
+<div ng-controller="PrikazCtrl">
+
+<div>
+	<form>
+		<div class="form-group"">
+		<label>Naziv Dokumenta</label>
+		<input class="form-control" ng-model="novi.naziv">
+		</div>
+	
+		<button class="btn btn-primary" ng-click="dodaj()">Dodaj</button>
+		
+	</form>
+<table class="table">
+	<thead>
+		<tr>
+		<th>Naziv</th>
+		<th>Iznos</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="x in dokumenti">
+		<td>{{x.naziv}}</td>
+		<td>{{x.iznos}}</td>		
+		<td><button ng-click="goToIzmena(x.id)">Izmeni</button>
+		<button ng-click="potvrdiBrisanje(x.id)">Obrisi</button>
+		</tr>
+	</tbody>
+</table>
+</div>
+</div>
